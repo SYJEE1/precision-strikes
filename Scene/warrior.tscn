@@ -1,6 +1,7 @@
-[gd_scene load_steps=25 format=3 uid="uid://ipmyi57jcfwl"]
+[gd_scene load_steps=26 format=3 uid="uid://ipmyi57jcfwl"]
 
 [ext_resource type="Texture2D" uid="uid://bivguvvjshov5" path="res://Assests/Sprite/Warrior_Sheet-Effect.png" id="1_gay7v"]
+[ext_resource type="Script" path="res://Scene/warrior.gd" id="1_s7ega"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_enf1u"]
 atlas = ExtResource("1_gay7v")
@@ -170,14 +171,16 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rofij"]
 size = Vector2(20, 23)
 
-[node name="Warrior" type="Node2D"]
+[node name="Warrior" type="CharacterBody2D"]
+z_index = 1
 position = Vector2(-1, 0)
-scale = Vector2(2, 2)
+scale = Vector2(6, 6)
+script = ExtResource("1_s7ega")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_hwf7j")
-animation = &"Running"
+animation = &"Idle"
 autoplay = "Idle"
 
 [node name="running" type="CollisionShape2D" parent="."]
