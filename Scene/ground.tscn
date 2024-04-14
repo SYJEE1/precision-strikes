@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://btv2ddymbd4ia"]
+
+[ext_resource type="Texture2D" uid="uid://dcipchwc7pvlw" path="res://Assests/paralaxbg/ground.png" id="1_1dpgq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7igy8"]
+size = Vector2(2291, 84)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 552)
+texture = ExtResource("1_1dpgq")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1149.5, 601)
+shape = SubResource("RectangleShape2D_7igy8")
