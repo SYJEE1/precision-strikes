@@ -243,14 +243,15 @@ script = ExtResource("1_s7ega")
 texture_filter = 1
 position = Vector2(0.166667, -1.33333)
 sprite_frames = SubResource("SpriteFrames_hwf7j")
-animation = &"duck"
+animation = &"run"
 autoplay = "idle"
-frame_progress = 0.791951
 
 [node name="RunCol" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-9, 5.66667)
 shape = SubResource("RectangleShape2D_0mafy")
 
 [node name="DuckCol" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-9.08333, 10.3333)
 shape = SubResource("RectangleShape2D_63i71")

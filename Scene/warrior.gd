@@ -14,8 +14,11 @@ func _physics_process(delta):
 		elif Input.is_action_just_pressed("crouch"):
 			$AnimatedSprite2D.play("duck")
 			$RunCol.disabled = true
-		else:
+		elif Input.is_action_just_pressed("forward"):
 			$AnimatedSprite2D.play("run")
+		else:
+			$AnimatedSprite2D.play("idle")
+
 	else:
 		$AnimatedSprite2D.play("jump")
 		
