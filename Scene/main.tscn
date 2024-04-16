@@ -9,10 +9,9 @@
 [node name="Bg" parent="." instance=ExtResource("1_hxyl5")]
 
 [node name="Warrior" parent="." instance=ExtResource("3_ei4np")]
-position = Vector2(350, 432)
-script = null
+position = Vector2(602, 425)
 
 [node name="Ground" parent="." instance=ExtResource("2_m5wo7")]
 
-[node name="Camera2D" type="Camera2D" parent="Ground"]
+[node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
