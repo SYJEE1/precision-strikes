@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://ipmyi57jcfwl"]
+[gd_scene load_steps=34 format=3 uid="uid://ipmyi57jcfwl"]
 
 [ext_resource type="Texture2D" uid="uid://bivguvvjshov5" path="res://Assests/Sprite/Warrior_Sheet-Effect.png" id="1_gay7v"]
 [ext_resource type="Script" path="res://Scene/warrior.gd" id="1_s7ega"]
@@ -27,9 +27,21 @@ region = Rect2(276, 132, 69, 44)
 atlas = ExtResource("1_gay7v")
 region = Rect2(345, 132, 69, 44)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tm5o0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_m158c"]
+atlas = ExtResource("1_gay7v")
+region = Rect2(138, 616, 69, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmji8"]
 atlas = ExtResource("1_gay7v")
 region = Rect2(207, 616, 69, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dyu2s"]
+atlas = ExtResource("1_gay7v")
+region = Rect2(276, 616, 69, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0a2a6"]
+atlas = ExtResource("1_gay7v")
+region = Rect2(345, 616, 69, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iyatm"]
 atlas = ExtResource("1_gay7v")
@@ -126,15 +138,24 @@ animations = [{
 }],
 "loop": true,
 "name": &"attack",
-"speed": 10.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tm5o0")
+"texture": SubResource("AtlasTexture_m158c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmji8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dyu2s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0a2a6")
 }],
 "loop": true,
 "name": &"duck",
-"speed": 10.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -157,7 +178,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 10.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -180,7 +201,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"jump",
-"speed": 10.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -203,7 +224,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 10.0
+"speed": 6.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0mafy"]
@@ -224,6 +245,7 @@ position = Vector2(0.166667, -1.33333)
 sprite_frames = SubResource("SpriteFrames_hwf7j")
 animation = &"duck"
 autoplay = "idle"
+frame_progress = 0.791951
 
 [node name="RunCol" type="CollisionShape2D" parent="."]
 position = Vector2(-9, 5.66667)
