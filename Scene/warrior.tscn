@@ -3,13 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://bivguvvjshov5" path="res://Assests/Sprite/Warrior_Sheet-Effect.png" id="1_gay7v"]
 [ext_resource type="Script" path="res://Scene/warrior.gd" id="1_s7ega"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ry1ii"]
-atlas = ExtResource("1_gay7v")
-region = Rect2(0, 132, 69, 44)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_6bmxn"]
 atlas = ExtResource("1_gay7v")
 region = Rect2(69, 132, 69, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ry1ii"]
+atlas = ExtResource("1_gay7v")
+region = Rect2(0, 132, 69, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wukid"]
 atlas = ExtResource("1_gay7v")
@@ -119,10 +119,10 @@ region = Rect2(345, 44, 69, 44)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ry1ii")
+"texture": SubResource("AtlasTexture_6bmxn")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6bmxn")
+"texture": SubResource("AtlasTexture_ry1ii")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wukid")
@@ -138,7 +138,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"attack",
-"speed": 6.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -155,7 +155,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"duck",
-"speed": 6.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -178,7 +178,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 6.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -201,7 +201,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"jump",
-"speed": 6.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -224,7 +224,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 6.0
+"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0mafy"]
@@ -243,7 +243,7 @@ script = ExtResource("1_s7ega")
 texture_filter = 1
 position = Vector2(0.166667, -1.33333)
 sprite_frames = SubResource("SpriteFrames_hwf7j")
-animation = &"run"
+animation = &"attack"
 autoplay = "idle"
 
 [node name="RunCol" type="CollisionShape2D" parent="."]

@@ -21,9 +21,8 @@ func new_game():
 	
 func _process(delta):
 	speed = START_SPEED
-	if Input.is_action_pressed("forward"):
-		$Warrior.position.x += speed
-		$Camera2D.position.x += speed
+	$Warrior.position.x += speed
+	$Camera2D.position.x += speed
 	
 	if $Camera2D.position.x - $Ground.position.x > screen_size.x * 1.5:
 		$Ground.position.x += screen_size.x

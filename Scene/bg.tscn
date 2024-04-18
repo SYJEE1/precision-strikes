@@ -15,7 +15,7 @@ centered = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
 position = Vector2(1, 0)
-motion_scale = Vector2(0.6, 1)
+motion_scale = Vector2(0.5, 1)
 motion_mirroring = Vector2(1152, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
@@ -24,7 +24,7 @@ centered = false
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
 position = Vector2(1, 0)
-motion_scale = Vector2(0.7, 1)
+motion_scale = Vector2(0.6, 1)
 motion_mirroring = Vector2(1152, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
@@ -33,7 +33,7 @@ centered = false
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
 position = Vector2(1, 0)
-motion_scale = Vector2(0.8, 1)
+motion_scale = Vector2(0.7, 1)
 motion_mirroring = Vector2(1152, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer3"]
@@ -42,7 +42,7 @@ centered = false
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
 position = Vector2(1, 0)
-motion_scale = Vector2(0.9, 1)
+motion_scale = Vector2(0.8, 1)
 motion_mirroring = Vector2(1152, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer4"]
