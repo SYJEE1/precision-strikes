@@ -1,7 +1,11 @@
-[gd_scene load_steps=27 format=3 uid="uid://cq51wdgmx0yn2"]
+[gd_scene load_steps=29 format=3 uid="uid://cq51wdgmx0yn2"]
 
+[ext_resource type="Script" path="res://Scene/slime.gd" id="1_3q0jg"]
 [ext_resource type="Texture2D" uid="uid://c51h2ojba0j5p" path="res://Assests/Sprite/Slime/Sprite Sheet - Red Death.png" id="1_wwut0"]
 [ext_resource type="Texture2D" uid="uid://br8pgxeqisnis" path="res://Assests/Sprite/Slime/Sprite Sheet - Red Idle.png" id="2_0q7fy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d23yo"]
+size = Vector2(37, 26)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3gvyc"]
 atlas = ExtResource("1_wwut0")
@@ -139,7 +143,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_i506k")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
 "speed": 10.0
 }, {
@@ -175,13 +179,24 @@ radius = 16.0
 
 [node name="slime" type="CharacterBody2D"]
 texture_filter = 1
+script = ExtResource("1_3q0jg")
+
+[node name="SlimeCol" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 0)
+shape = SubResource("RectangleShape2D_d23yo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_fkypn")
-animation = &"idle"
+animation = &"death"
 autoplay = "idle"
 
-[node name="slime" type="CollisionShape2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="slime" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 8)
 shape = SubResource("CircleShape2D_abn6w")
+
+[connection signal="animation_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_changed"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]

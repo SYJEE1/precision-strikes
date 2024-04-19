@@ -7,11 +7,12 @@ const JUMP_SPEED : int = -1800
 func _physics_process(delta):
 	velocity.y += GRAVITY * delta
 	if  is_on_floor():
+		var attack = get_node("Area2D/AttCol")
 		$RunCol.disabled = false
-		$AttCol.disabled = true
+		attack.disabled = true
 		if Input.is_action_pressed("attack"):
 			$AnimatedSprite2D.play("attack")
-			$AttCol.disabled = false
+			attack.disabled = false
 			velocity.x = 0
 		elif Input.is_action_pressed("forward"):
 			$AnimatedSprite2D.play("run")
@@ -19,4 +20,3 @@ func _physics_process(delta):
 			$AnimatedSprite2D.play("idle")
 	
 	move_and_slide()
-

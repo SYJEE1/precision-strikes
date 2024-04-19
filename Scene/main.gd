@@ -25,6 +25,7 @@ func _process(delta):
 		$Warrior.position.x += speed
 		$Camera2D.position.x += speed
 	if Input.is_action_pressed("attack"):
+		speed = 0
 		$Warrior.position.x -= speed
 		$Camera2D.position.x -= speed
 	if $Camera2D.position.x - $Ground.position.x > screen_size.x * 1.5:

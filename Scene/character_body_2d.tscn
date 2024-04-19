@@ -3,6 +3,12 @@
 [ext_resource type="Script" path="res://Scene/CharacterBody2D.gd" id="1_o70cp"]
 [ext_resource type="Texture2D" uid="uid://bivguvvjshov5" path="res://Assests/Sprite/Warrior_Sheet-Effect.png" id="2_obc2w"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sl023"]
+size = Vector2(13.3333, 20.3333)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hp3fo"]
+size = Vector2(13.3333, 27)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_3vq5b"]
 atlas = ExtResource("2_obc2w")
 region = Rect2(0, 572, 69, 44)
@@ -241,14 +247,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hp3fo"]
-size = Vector2(13.3333, 27)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sl023"]
-size = Vector2(13.3333, 20.3333)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qokbg"]
-size = Vector2(34, 20)
+size = Vector2(45.1667, 20)
 
 [node name="Warrior" type="CharacterBody2D"]
 z_index = 1
@@ -256,20 +256,25 @@ texture_filter = 1
 scale = Vector2(6, 6)
 script = ExtResource("1_o70cp")
 
+[node name="DuckCol" type="CollisionShape2D" parent="."]
+position = Vector2(-8, 11.3333)
+shape = SubResource("RectangleShape2D_sl023")
+
+[node name="RunCol" type="CollisionShape2D" parent="."]
+position = Vector2(-8, 8)
+shape = SubResource("RectangleShape2D_hp3fo")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_qrcy8")
 animation = &"attack"
 frame = 3
 frame_progress = 0.34154
 
-[node name="RunCol" type="CollisionShape2D" parent="."]
-position = Vector2(-8, 8)
-shape = SubResource("RectangleShape2D_hp3fo")
+[node name="Area2D" type="Area2D" parent="."]
 
-[node name="DuckCol" type="CollisionShape2D" parent="."]
-position = Vector2(-8, 11.3333)
-shape = SubResource("RectangleShape2D_sl023")
-
-[node name="AttCol" type="CollisionShape2D" parent="."]
-position = Vector2(17.6667, 8)
+[node name="AttCol" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(10.5, 9.33333)
 shape = SubResource("RectangleShape2D_qokbg")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="hidden" from="Area2D/AttCol" to="." method="_on_att_col_hidden"]
