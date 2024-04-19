@@ -248,10 +248,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qokbg"]
-size = Vector2(27.6042, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kyr1v"]
-size = Vector2(20.8333, 29.1667)
+size = Vector2(45.1667, 20)
 
 [node name="Warrior" type="CharacterBody2D"]
 z_index = 1

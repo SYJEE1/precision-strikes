@@ -5,6 +5,9 @@ var main_node
 func _ready():
 	main_node = get_node("/root/Main")
 
+	$SlimeCol.disabled = false
+	$Area2D/slime.disabled = false
+
 func _on_animated_sprite_2d_animation_finished():
 	queue_free()
 
