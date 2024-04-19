@@ -3,8 +3,7 @@ func _ready():
 	$SlimeCol.disabled = false
 	$Area2D/slime.disabled = false
 func _on_animated_sprite_2d_animation_changed():
-	$SlimeCol.disabled = true
-	$Area2D/slime.disabled = true
+	queue_free()
 func _on_animated_sprite_2d_animation_finished():
 	queue_free()
 
