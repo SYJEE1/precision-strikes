@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dxpjno0quktvd"]
+[gd_scene load_steps=11 format=3 uid="uid://dxpjno0quktvd"]
 
 [ext_resource type="Script" path="res://Scene/main.gd" id="1_gm8l1"]
 [ext_resource type="PackedScene" uid="uid://cfexcujnbdhk7" path="res://Scene/bg.tscn" id="1_hxyl5"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ccd2hsxfpsog4" path="res://Scene/hud.tscn" id="7_u6i06"]
 [ext_resource type="Script" path="res://Scene/Heart.gd" id="8_de0hc"]
 [ext_resource type="PackedScene" uid="uid://c32fxx47o5mx5" path="res://Scene/HeartsContainer.tscn" id="8_sklpo"]
+[ext_resource type="PackedScene" uid="uid://v6dblq4f20tx" path="res://Scene/game_over.tscn" id="8_xhaku"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_gm8l1")
@@ -30,6 +31,8 @@ script = ExtResource("5_5m7qo")
 
 [node name="HUD" parent="." instance=ExtResource("7_u6i06")]
 
+[node name="GameOver" parent="." instance=ExtResource("8_xhaku")]
+
 [node name="Heart" type="CanvasLayer" parent="."]
 script = ExtResource("8_de0hc")
 
@@ -46,6 +49,5 @@ offset_right = 191.0
 offset_bottom = 305.0
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

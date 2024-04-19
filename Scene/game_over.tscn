@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://v6dblq4f20tx"]
+
+[ext_resource type="FontFile" uid="uid://87ilw8bjyi28" path="res://Assests/FONT/Daydream.ttf" id="1_iibvj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e841t"]
+bg_color = Color(1, 0.231373, 0.682353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ihtk7"]
+bg_color = Color(0.388235, 0.580392, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_773pq"]
+bg_color = Color(0, 0.662745, 0.835294, 1)
+
+[node name="GameOver" type="CanvasLayer"]
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.5
+offset_top = -30.5
+offset_right = 152.5
+offset_bottom = 30.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_iibvj")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_e841t")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ihtk7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_773pq")
+text = "RESTART"
