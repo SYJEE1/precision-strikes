@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dxpjno0quktvd"]
+[gd_scene load_steps=7 format=3 uid="uid://dxpjno0quktvd"]
 
 [ext_resource type="Script" path="res://Scene/main.gd" id="1_gm8l1"]
 [ext_resource type="PackedScene" uid="uid://cfexcujnbdhk7" path="res://Scene/bg.tscn" id="1_hxyl5"]
 [ext_resource type="PackedScene" uid="uid://btv2ddymbd4ia" path="res://Scene/ground.tscn" id="2_m5wo7"]
-[ext_resource type="PackedScene" uid="uid://ipmyi57jcfwl" path="res://Scene/warrior.tscn" id="3_ei4np"]
+[ext_resource type="PackedScene" uid="uid://ga3coikuyeju" path="res://Scene/character_body_2d.tscn" id="3_5eaxr"]
+[ext_resource type="PackedScene" uid="uid://cq51wdgmx0yn2" path="res://Scene/slime.tscn" id="4_6pm5b"]
 [ext_resource type="Script" path="res://Scene/Camera.gd" id="5_5m7qo"]
 
 [node name="Main" type="Node"]
@@ -11,8 +12,12 @@ script = ExtResource("1_gm8l1")
 
 [node name="Bg" parent="." instance=ExtResource("1_hxyl5")]
 
-[node name="Warrior" parent="." instance=ExtResource("3_ei4np")]
-position = Vector2(254, 427)
+[node name="Warrior" parent="." instance=ExtResource("3_5eaxr")]
+position = Vector2(170, 424)
+
+[node name="Slime" parent="." instance=ExtResource("4_6pm5b")]
+position = Vector2(456, 480)
+scale = Vector2(6, 6)
 
 [node name="Ground" parent="." instance=ExtResource("2_m5wo7")]
 
