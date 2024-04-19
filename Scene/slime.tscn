@@ -174,16 +174,16 @@ script = ExtResource("1_3q0jg")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_fkypn")
-animation = &"idle"
+animation = &"death"
 autoplay = "idle"
-
-[node name="SlimeCol" type="CollisionShape2D" parent="."]
-position = Vector2(-1.5, 0)
-shape = SubResource("RectangleShape2D_d23yo")
 
 [node name="Area2D" type="Area2D" parent="."]
 
-[node name="slime" type="CollisionShape2D" parent="Area2D"]
+[node name="SlimeCol" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_abn6w")
+
+[node name="SlimeCol" type="CollisionShape2D" parent="."]
 position = Vector2(0, 8)
 shape = SubResource("CircleShape2D_abn6w")
 

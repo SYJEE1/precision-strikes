@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://ga3coikuyeju" path="res://Scene/character_body_2d.tscn" id="3_5eaxr"]
 [ext_resource type="PackedScene" uid="uid://cq51wdgmx0yn2" path="res://Scene/slime.tscn" id="4_6pm5b"]
 [ext_resource type="Script" path="res://Scene/Camera.gd" id="5_5m7qo"]
-[ext_resource type="PackedScene" uid="uid://b16bdts6h3rk3" path="res://Scene/game_over.tscn" id="7_bdb81"]
 [ext_resource type="PackedScene" uid="uid://ccd2hsxfpsog4" path="res://Scene/hud.tscn" id="7_u6i06"]
 [ext_resource type="Script" path="res://Scene/Heart.gd" id="8_de0hc"]
 [ext_resource type="PackedScene" uid="uid://c32fxx47o5mx5" path="res://Scene/HeartsContainer.tscn" id="8_sklpo"]
@@ -28,9 +27,6 @@ scale = Vector2(6, 6)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
 script = ExtResource("5_5m7qo")
-
-[node name="GameOver" parent="." instance=ExtResource("7_bdb81")]
-process_mode = 2
 
 [node name="HUD" parent="." instance=ExtResource("7_u6i06")]
 
