@@ -248,10 +248,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qokbg"]
-size = Vector2(27.6042, 20)
+size = Vector2(45.1667, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kyr1v"]
-size = Vector2(20.8333, 29.1667)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pti5l"]
+radius = 8.5
 
 [node name="Warrior" type="CharacterBody2D"]
 z_index = 1
@@ -276,14 +276,14 @@ frame_progress = 0.34154
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="AttCol" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(14.3021, 9.83333)
+position = Vector2(10.5, 9.33333)
 shape = SubResource("RectangleShape2D_qokbg")
 
 [node name="Area2D2" type="Area2D" parent="."]
 
 [node name="DamageCol" type="CollisionShape2D" parent="Area2D2"]
-position = Vector2(-10.25, 7.08333)
-shape = SubResource("RectangleShape2D_kyr1v")
+position = Vector2(-5.33333, 4)
+shape = SubResource("CapsuleShape2D_pti5l")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="hidden" from="Area2D/AttCol" to="." method="_on_att_col_hidden"]

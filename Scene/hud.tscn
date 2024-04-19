@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ccd2hsxfpsog4"]
 
-[ext_resource type="FontFile" path="res://Assests/FONT/Daydream.ttf" id="1_i3d41"]
+[ext_resource type="FontFile" uid="uid://87ilw8bjyi28" path="res://Assests/FONT/Daydream.ttf" id="1_i3d41"]
 
 [node name="HUD" type="CanvasLayer"]
 

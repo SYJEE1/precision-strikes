@@ -25,6 +25,7 @@ func new_game():
 	score = 0
 	show_score()
 	game_running = false
+	$Timer.start()
 	
 	$Warrior.position = WARRIOR_START_POS
 	$Warrior.velocity = Vector2i(0,0)
@@ -52,3 +53,14 @@ func _process(delta):
 
 func show_score():
 	$HUD.get_node("ScoreLabel").text = "SCORE: " + str(score / SCORE_MODIFIER)
+	
+func spawn_slime():
+	var new_slime = slime.instantiate()
+	var warrior_position = $Warrior.position
+	new_slime.position = Vector2i(warrior_position.x + 1200, 485)
+	new_slime.scale = Vector2(6, 6)
+	add_child(new_slime)
+
+
+func _on_timer_timeout():
+	spawn_slime()
