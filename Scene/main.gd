@@ -7,7 +7,7 @@ var enemies : Array
 const WARRIOR_START_POS := Vector2i(150, 485)
 const CAM_START_POS 	:= Vector2i(576, 324)
 var score : int
-const SCORE_MODIFIER : int = 10
+const SCORE_MODIFIER : int = 20
 var speed : float
 const  START_SPEED : float = 6.0
 const MAX_SPEED : int = 25

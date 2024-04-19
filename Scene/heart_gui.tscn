@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgvcge8l70kw1"]
+
+[ext_resource type="Texture2D" uid="uid://bveof415qrj26" path="res://Assests/Sprite/Pixel Heart Animation GIFs & Spritesheets, 32x32 and 16x16/Pixel Heart Sprite Sheet 16x16.png" id="1_het2h"]
+
+[node name="HeartGui" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(16, 16)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -16.0
+offset_right = 8.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-24, -48)
+scale = Vector2(4, 4)
+texture = ExtResource("1_het2h")
+centered = false
+hframes = 3
