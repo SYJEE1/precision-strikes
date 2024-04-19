@@ -11,9 +11,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if hp == 0:
-		get_tree().quit()
-	elif hp == 1:
+	if hp == 1:
 		if not has_freed_hp2: # Check the flag
 			hp2.queue_free()
 			has_freed_hp2 = true # Set the flag to true

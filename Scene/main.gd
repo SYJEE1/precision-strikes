@@ -15,8 +15,11 @@ var screen_size : Vector2i
 var game_running : bool
 var ground_height : int
 var last_en
+var health
+
 
 func _ready():
+	health = get_node("Heart")
 	screen_size = get_window().size
 	ground_height = $Ground.get_node("Sprite2D").texture.get_height()
 	$GameOver.get_node("Button").pressed.connect(new_game)
@@ -40,6 +43,8 @@ func new_game():
 	
 	
 func _process(delta):
+	if health.hp == 0:
+		game_over()
 	if game_running:
 		speed = START_SPEED
 		if Input.is_action_pressed("forward"):
@@ -50,7 +55,6 @@ func _process(delta):
 			$Warrior.position.x -= speed
 			$Camera2D.position.x -= speed
 		
-
 		show_score()
 		if $Camera2D.position.x - $Ground.position.x > screen_size.x * 1.5:
 			$Ground.position.x += screen_size.x

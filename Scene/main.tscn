@@ -32,6 +32,7 @@ script = ExtResource("5_5m7qo")
 [node name="HUD" parent="." instance=ExtResource("7_u6i06")]
 
 [node name="GameOver" parent="." instance=ExtResource("8_xhaku")]
+process_mode = 2
 
 [node name="Heart" type="CanvasLayer" parent="."]
 script = ExtResource("8_de0hc")
