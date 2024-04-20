@@ -7,7 +7,7 @@ var enemies : Array
 const WARRIOR_START_POS := Vector2i(150, 485)
 const CAM_START_POS 	:= Vector2i(576, 324)
 var score : int
-const SCORE_MODIFIER : int = 60
+const SCORE_MODIFIER : int = 1
 var speed : float
 const  START_SPEED : float = 6.0
 const MAX_SPEED : int = 25
@@ -63,13 +63,20 @@ func _process(delta):
 			game_running = true
 			$HUD.get_node("StartLabel").hide()
 func show_score():
-	$HUD.get_node("ScoreLabel").text = "SCORE: " + str(score / SCORE_MODIFIER)
+	$HUD.get_node("ScoreLabel").text = "SCORE: " + str(score)
 	
 func spawn_slime():
 	var new_slime = slime.instantiate()
 	var warrior_position = $Warrior.position
-	new_slime.position = Vector2i(warrior_position.x + 1200, 485)
-	new_slime.scale = Vector2(6, 6)
+	new_slime.position = Vector2i(warrior_position.x + 1200, 510)
+	new_slime.scale = Vector2(4, 4)
+	var current_time = $Timer.wait_time
+	$Timer.wait_time = current_time - (score * 0.05)
+	if score > 60:
+		$Timer.wait_time = 0.20
+	elif score > 100:
+		$Timer.wait_time = 0.14
+	print($Timer.wait_time)
 	add_child(new_slime)
 
 

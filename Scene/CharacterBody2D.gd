@@ -4,10 +4,12 @@ const GRAVITY : int = 8000
 const JUMP_SPEED : int = -1800
 var attack
 var health
+var timer
 
 func _ready():
 	attack = get_node("Area2D/AttCol")
 	health = get_node("../Heart")
+	timer = get_node("../Timer")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
@@ -28,3 +30,5 @@ func _physics_process(delta):
 
 func _on_area_2d_2_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
 	health.hp -= 1
+	timer.wait_time = 3
+	
