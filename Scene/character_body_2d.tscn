@@ -274,15 +274,15 @@ animation = &"attack"
 frame = 3
 frame_progress = 0.34154
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["charac"]]
 
-[node name="AttCol" type="CollisionShape2D" parent="Area2D"]
+[node name="AttCol" type="CollisionShape2D" parent="Area2D" groups=["charac"]]
 position = Vector2(14.3021, 9.83333)
 shape = SubResource("RectangleShape2D_qokbg")
 
-[node name="Area2D2" type="Area2D" parent="."]
+[node name="Area2D2" type="Area2D" parent="." groups=["charac"]]
 
-[node name="DamageCol" type="CollisionShape2D" parent="Area2D2"]
+[node name="DamageCol" type="CollisionShape2D" parent="Area2D2" groups=["charac"]]
 position = Vector2(-10.25, 7.08333)
 shape = SubResource("RectangleShape2D_kyr1v")
 

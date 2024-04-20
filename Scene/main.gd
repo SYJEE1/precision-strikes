@@ -75,11 +75,13 @@ func spawn_slime():
 	new_slime.position = Vector2i(warrior_position.x + 1200, 510)
 	new_slime.scale = Vector2(4, 4)
 	var current_time = $Timer.wait_time
-	$Timer.wait_time = current_time - (score * 0.05)
-	if score > 60 && health.hp == 2:
+	$Timer.wait_time = current_time - (score * 0.12)
+	if score > 40:
 		$Timer.wait_time = 0.20
-	if score > 100 && health.hp == 2:
+	if score > 65:
 		$Timer.wait_time = 0.14
+	if score > 90:
+		$Timer.wait_time = 0.07
 	print($Timer.wait_time)
 	add_child(new_slime)
 

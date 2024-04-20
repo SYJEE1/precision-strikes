@@ -15,10 +15,10 @@
 [node name="Main" type="Node"]
 script = ExtResource("1_gm8l1")
 
-[node name="Bg" parent="." instance=ExtResource("1_hxyl5")]
+[node name="Warrior" parent="." instance=ExtResource("3_5eaxr")]
+position = Vector2(141, 421)
 
-[node name="Warrior" parent="." groups=["player"] instance=ExtResource("3_5eaxr")]
-position = Vector2(147, 415)
+[node name="Bg" parent="." instance=ExtResource("1_hxyl5")]
 
 [node name="Ground" parent="." instance=ExtResource("2_m5wo7")]
 
