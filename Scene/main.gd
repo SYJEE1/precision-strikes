@@ -27,6 +27,8 @@ func _ready():
 
 func new_game():
 	health.hp = 2
+	health.hp2.show()
+	health.has_freed_hp2 = false
 	score = 0
 	show_score()
 	game_running = false

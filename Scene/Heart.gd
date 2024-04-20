@@ -13,5 +13,5 @@ func _ready():
 func _process(delta):
 	if hp == 1:
 		if not has_freed_hp2: # Check the flag
-			hp2.queue_free()
+			hp2.hide()
 			has_freed_hp2 = true # Set the flag to true
