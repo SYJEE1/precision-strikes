@@ -26,13 +26,14 @@ func _ready():
 	new_game()
 
 func new_game():
+	health.hp = 2
 	score = 0
 	show_score()
 	game_running = false
 	get_tree().paused = false
+	
 	$Timer.start()
 	$BGM.play()
-	
 	$Warrior.position = WARRIOR_START_POS
 	$Warrior.velocity = Vector2i(0,0)
 	$Camera2D.position = CAM_START_POS
@@ -44,15 +45,15 @@ func new_game():
 	
 	
 func _process(delta):
-	if health.hp == 0:
+	if health.hp <= 0:
 		game_over()
 	if game_running:
 		speed = START_SPEED
 		if Input.is_action_pressed("forward"):
 			$Warrior.position.x += speed
 			$Camera2D.position.x += speed
-		if Input.is_action_pressed("attack"):
-			speed = 5
+		if Input.is_action_just_pressed("attack"):
+			speed = 1
 			$Warrior.position.x -= speed
 			$Camera2D.position.x -= speed
 		

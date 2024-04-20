@@ -32,9 +32,6 @@ script = ExtResource("5_5m7qo")
 
 [node name="HUD" parent="." instance=ExtResource("7_u6i06")]
 
-[node name="GameOver" parent="." instance=ExtResource("8_xhaku")]
-process_mode = 2
-
 [node name="Heart" type="CanvasLayer" parent="."]
 script = ExtResource("8_de0hc")
 
@@ -54,6 +51,10 @@ offset_bottom = 305.0
 wait_time = 3.0
 
 [node name="BGM" parent="." instance=ExtResource("11_8uxbt")]
+volume_db = -30.0
 autoplay = false
+
+[node name="GameOver" parent="." instance=ExtResource("8_xhaku")]
+process_mode = 2
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
