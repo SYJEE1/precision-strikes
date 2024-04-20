@@ -18,6 +18,7 @@ func _physics_process(delta):
 		$RunCol.disabled = false
 		attack.disabled = true
 		if Input.is_action_pressed("attack"):
+			$SwordSound.play()
 			$AnimatedSprite2D.play("attack")
 			attack.disabled = false
 			velocity.x = 0

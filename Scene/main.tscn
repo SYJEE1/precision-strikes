@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dxpjno0quktvd"]
+[gd_scene load_steps=12 format=3 uid="uid://dxpjno0quktvd"]
 
 [ext_resource type="Script" path="res://Scene/main.gd" id="1_gm8l1"]
 [ext_resource type="PackedScene" uid="uid://cfexcujnbdhk7" path="res://Scene/bg.tscn" id="1_hxyl5"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://Scene/Heart.gd" id="8_de0hc"]
 [ext_resource type="PackedScene" uid="uid://c32fxx47o5mx5" path="res://Scene/HeartsContainer.tscn" id="8_sklpo"]
 [ext_resource type="PackedScene" uid="uid://v6dblq4f20tx" path="res://Scene/game_over.tscn" id="8_xhaku"]
+[ext_resource type="PackedScene" uid="uid://btmon0kpgo4un" path="res://Scene/bgm.tscn" id="11_8uxbt"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_gm8l1")
@@ -51,5 +52,8 @@ offset_bottom = 305.0
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
+
+[node name="BGM" parent="." instance=ExtResource("11_8uxbt")]
+autoplay = false
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -31,6 +31,7 @@ func new_game():
 	game_running = false
 	get_tree().paused = false
 	$Timer.start()
+	$BGM.play()
 	
 	$Warrior.position = WARRIOR_START_POS
 	$Warrior.velocity = Vector2i(0,0)
@@ -51,7 +52,7 @@ func _process(delta):
 			$Warrior.position.x += speed
 			$Camera2D.position.x += speed
 		if Input.is_action_pressed("attack"):
-			speed = 0
+			speed = 5
 			$Warrior.position.x -= speed
 			$Camera2D.position.x -= speed
 		
